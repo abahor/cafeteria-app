@@ -1,0 +1,10 @@
+{% macro show_errors(d) %}
+{% for i in d.keys() %}
+
+	 {% for g in d[i] %}
+    <div class="alert alert-primary alert-dismissible fade show" role="alert">
+       {{ g }}
+    </div>
+    {% endfor %}
+{% endfor %}
+{% endmacro %}

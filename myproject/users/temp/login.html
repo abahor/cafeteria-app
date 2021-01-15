@@ -1,0 +1,35 @@
+{% extends 'main.html' %}
+{% from "showingerrors.html" import show_errors %}
+{% block links %}
+<link rel="stylesheet" href="/static/css/login.css">
+{% endblock %}
+{% block content %}
+<div class="jumbotron">
+    {% for msg in get_flashed_messages() %}
+
+    {# % if msg == "Please log in to access this page." % #}
+{# % else %  #}
+<div class="alert alert-danger errors-container" role="alert">
+    {{ msg|e }}
+</div>
+{# %    endif  % #}
+{% endfor %}
+
+    {{  show_errors(d) }}
+    <form method="post">
+        {{ form.hidden_tag() }}
+          <div class="form-group">
+        {{ form.email.label(class='form-label') }}
+        {{ form.email(class='form-control') }}
+          </div>
+        <div class="form-group">
+            {{ form.password.label(class='form-label') }}
+            {{ form.password(class='form-control') }}
+        </div>
+        {{ form.submit(class="btn btn-primary") }}
+<!--        <div class="forget-password">-->
+<!--          <a href="/forget-password">Forget password</a>-->
+<!--        </div> you can add a password reset from here -->
+    </form>
+</div>
+{% endblock %}

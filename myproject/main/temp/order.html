@@ -1,0 +1,59 @@
+{% extends "main.html" %}
+{% block links %}
+<link href="/static/css/purchase.css ">
+{% endblock %}
+{% block content %}
+<form name="topaypal" action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
+
+<div class="jumbotron" style="padding-top:2rem">
+<!--        <div class="sad" id="sad" style="    padding: 10px !important;-->
+<!--    background: #ddd !important;-->
+<!--    padding: 1rem !important;-->
+
+
+<!--    border-radius: 3px !important;">-->
+<!--            <h5 class="">Order your {{ item.title }}</h5>-->
+<!--        </div>-->
+<!--	<p class="card-text">{{ item.description }}</p>-->
+
+<!--    <a class="btn btn-primary purchase-button btn-sx" style="width:100% !important">Purchase</a>-->
+<div class="d-flex justify-content-around">
+	<div class="card" style="width: 18.5rem;">
+            <div class="card-body">
+                <h5 class="card-title">{{ item.title }}</h5>
+                <p class="card-text">{{ item.description }}</p>
+                <hr>
+        <input type="submit" value="Purchase  : {{ session['price'] }}$" style="width:100% !important"  name="submit" title="PayPal - The safer, easier way to pay online!" class="btn btn-primary">
+            </div>
+        </div>
+
+</div>
+
+
+    </div>
+</div>
+
+
+
+
+
+
+
+				<input type="hidden" name="cmd" value="_xclick-subscriptions">
+				<input type="hidden" name="custom" value="{{ current_user.is_authenticated }}"/>
+				<input type="hidden" name="business" value="sb-v7bsz4626728@business.example.com">
+				<input type="hidden" name="item_name" value="subscription button">
+				<input type="hidden" name="item_number" value="500">
+				<input type="hidden" name="no_shipping" value="1">
+				<input type="hidden" name="a3" value="10.00">
+				<input type="hidden" name="p3" value="1">
+				<input type="hidden" name="t3" value="M">
+				<input type="hidden" name="src" value="1">
+				<input type="hidden" name="sra" value="1">
+				<input type="hidden" name="return" value="http://127.0.0.1:5000/success/">
+				<input type="hidden" name="cancel_return" value="http://127.0.0.1:5000/">
+				<input type="hidden" name="notify_url" value="http://104.236.221.91/ipn/">
+
+			</form>
+
+{% endblock %}

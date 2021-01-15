@@ -1,0 +1,32 @@
+.trying-to-be {
+    color: #004085;
+    background-color: #cce5ff;
+    border-color: #b8daff;
+ transition: opacity .15s linear;
+    position: relative;
+    padding: .75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    padding-right: 4rem !important;
+}
+
+
+/*.alert-primary {
+    color: #004085;
+    background-color: #cce5ff;
+    border-color: #b8daff;
+}
+.alert-dismissible {
+    padding-right: 4rem !important;
+}
+.alert {
+    position: relative;
+    padding: .75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+}
+.fade {
+    transition: opacity .15s linear;
+}*/

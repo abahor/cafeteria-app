@@ -1,0 +1,44 @@
+{% extends 'admin/master.html' %}
+{% from "showingerrors.html" import show_errors %}
+{% block body %}
+{% for msg in get_flashed_messages() %}
+  {{ msg }}
+{% endfor %}
+<link href="/static/css/adding.css">
+<div class="jumbotron">
+{% for i in errors.keys() %}
+
+	 {% for g in errors[i] %}
+    <div class="alert alert-primary alert-dismissible show" style="" role="alert">
+         {{ g }}
+    </div>
+    {% endfor %}
+{% endfor %}
+
+<form method="post">
+        {{ form.hidden_tag() }}
+          <div class="mb-3">
+        {{ form.kind.label(class='form-label') }}
+        {{ form.kind(class='form-control') }}
+          </div>
+
+    <div class="mb-3">
+      {{ form.title.label }}
+      {{ form.title(class='form-control') }}
+    </div>
+      <div class="mb-3">
+        {{ form.description.label(class='form-label') }}
+        {{ form.description(class='form-control') }}
+        </div>
+      <div class="mb-3">
+        {{ form.price.label(class='form-label') }}
+        {{ form.price(class='form-control') }}
+        </div>
+  <div class="mb-3">
+        {{ form.preparation_time.label(class='form-label') }}
+        {{ form.preparation_time(class='form-control') }}
+        </div>
+        {{ form.submit(class="btn btn-primary") }}
+</form>
+    </div>
+{% endblock %}

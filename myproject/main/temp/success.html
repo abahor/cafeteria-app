@@ -1,0 +1,22 @@
+{% extends "main.html" %}
+{% block links %}
+        <link rel="stylesheet" href="/static/css/counter.css">
+{% endblock %}
+
+    {% block content %}
+<div class="jumbotron">
+    <div class="d-flex justify-content-around">
+        <div style="display:block" id="app"></div>
+
+
+</div>
+    <div class="errors-container">
+    <div class="alert alert-success">
+            <div class="d-flex justify-content-around">
+                Time remaining to take your order
+            </div>
+        </div>
+        </div>
+        <script  src="/counter?c= {{ session['preparation_time'] }}"></script>
+</div>
+    {% endblock %}

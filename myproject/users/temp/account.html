@@ -1,0 +1,44 @@
+{% extends 'main.html' %}
+{% block content %}
+<div class="jumbotron">
+    {% for msg in get_flashed_messages() %}
+
+    {{ msg|e }}
+
+{% endfor %}
+        <div class="form-group">
+            <label class="form-label">Registration ID   :   </label>
+            <label class="form-label">{{ current_user.id }}</label>
+        </div>
+
+
+    <div>
+        <div class="form-group">
+    <label class="form-label">Email   :   </label>
+        <label class="form-label">{{current_user.email }}</label>
+    </div>
+    </div>
+    <div class="form-group">
+    <img align="center" class="img-fluid " src="{{current_user.profile_pic}}" style="max-width:100%"  onclick="data()">
+    </div>
+        <div class="form-group">
+            <label class="form-label">Employee Name :  </label>
+            <label>{{ current_user.username }}</label>
+        <br>
+        </div>
+    <div class="form-group">
+        <label>Phone Number  :  </label>
+        <label>{{ current_user.mobile }}</label>
+    </div>
+        <div class="form-group">
+            <label>Date  :  </label>
+            <label> {{ current_user.date.date() }}</label>
+    </div>
+
+
+
+        <br>
+
+
+</div>
+{% endblock %}
