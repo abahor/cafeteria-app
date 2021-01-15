@@ -13,7 +13,7 @@ app.config['FLASK_ADMIN_SWATCH'] = 'Cyborg'
 basedir = os.path.abspath(os.path.dirname(__file__))
 app.config['SECRET_KEY'] = 'mykeyasdfghjklsdfghnjm'
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'data.sqlite')
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:hpprobook450g3*@localhost/cafeteria'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://user:password@localhost/cafeteria'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 
 # app.config.update(
