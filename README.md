@@ -9,7 +9,7 @@ I built this during my first year of college for a hackthon on [hackerearth.com]
 pip install -r requirements.txt
 ```  
 3- create a database with name cafeteria  
-4- run 
+4- run the following commands
 ```
 flask db init
 flask db migrate 
