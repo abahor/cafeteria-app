@@ -36,6 +36,7 @@ login.login_view = 'users.login'
 class My_Admin_View(AdminIndexView):
     def is_accessible(self):
         if current_user.is_authenticated:
+            # limited to only my email address 
             if current_user.email == 'abahormelad@gmail.com':
                 return current_user.is_authenticated
         return abort(404)
@@ -60,6 +61,7 @@ app.register_blueprint(main)
 # d ='/ddd'
 # print(d)
 
+# used it for checking on something
 @app.template_filter('r')
 def r(d):
     print(type(d))
