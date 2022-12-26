@@ -11,9 +11,9 @@ pip install -r requirements.txt
 3- create a database with name cafeteria  
 4- run the following commands
 ```
-flask db init
-flask db migrate 
-flask db upgrade
+$ flask db init
+$ flask db migrate 
+$ flask db upgrade
 ```  
 5- finally run app.py :)
 
